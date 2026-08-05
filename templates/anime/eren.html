@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Eren | Anime Showcase{% endblock %}
+
+{% block content %}
+
+    <section class="character-page">
+        <div class="character-hero">
+            <img src="{{ url_for('static', filename='images/eren.jpg') }}"
+     alt="Eren Yeager"
+     class="character-img">
+            <div class="character-info">
+                <h1>Eren Yeager</h1>
+                <p class="character-anime">Attack on Titan</p>
+                <p class="character-desc">
+                    Eren's journey from a boy who swore to destroy all Titans to one of
+                    the most complex protagonists in anime history is one of the medium's
+                    most talked-about character arcs.
+                </p>
+                <div class="character-tags">
+                    <span class="tag">Titan Shifter</span>
+                    <span class="tag">Protagonist</span>
+                    <span class="tag">Anti-Hero</span>
+                </div>
+            </div>
+        </div>
+
+        <a href="{{ url_for('index') }}" class="btn back-btn">← Back to Home</a>
+    </section>
+
+{% endblock %}

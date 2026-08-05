@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Luffy | Anime Showcase{% endblock %}
+
+{% block content %}
+
+    <section class="character-page">
+        <div class="character-hero">
+            <img src="{{ url_for('static', filename='images/luffy.jpg') }}"
+     alt="Luffy"
+     class="character-img">
+            <div class="character-info">
+                <h1>Monkey D. Luffy</h1>
+                <p class="character-anime">One Piece</p>
+                <p class="character-desc">
+                    The captain of the Straw Hat Pirates, Luffy dreams of becoming the
+                    Pirate King. With his Gum-Gum powers and unshakable optimism, he
+                    inspires everyone around him to chase their own dreams too.
+                </p>
+                <div class="character-tags">
+                    <span class="tag">Captain</span>
+                    <span class="tag">Devil Fruit User</span>
+                    <span class="tag">Protagonist</span>
+                </div>
+            </div>
+        </div>
+
+        <a href="{{ url_for('index') }}" class="btn back-btn">← Back to Home</a>
+    </section>
+
+{% endblock %}

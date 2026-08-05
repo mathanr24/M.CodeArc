@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Goku | Anime Showcase{% endblock %}
+
+{% block content %}
+
+    <section class="character-page">
+        <div class="character-hero">
+            <img src="{{ url_for('static', filename='images/goku.jpg') }}" alt="Goku" class="character-img">
+            <div class="character-info">
+                <h1>Son Goku</h1>
+                <p class="character-anime">Dragon Ball</p>
+                <p class="character-desc">
+                    A Saiyan raised on Earth, Goku's relentless pursuit of becoming
+                    stronger — not for power's sake, but for the thrill of the fight —
+                    has made him one of the most influential characters in anime history.
+                </p>
+                <div class="character-tags">
+                    <span class="tag">Saiyan</span>
+                    <span class="tag">Protagonist</span>
+                    <span class="tag">Martial Artist</span>
+                </div>
+            </div>
+        </div>
+
+        <a href="{{ url_for('index') }}" class="btn back-btn">← Back to Home</a>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Projects | MADCPT{% endblock %}
+
+{% block content %}
+
+    <section class="projects-page">
+        <h1>Projects</h1>
+        <p class="section-sub">A few things I've built.</p>
+
+        <div class="grid">
+
+            <div class="card project-card">
+                <h3>SmartDoc – Intelligent Document Understanding Platform</h3>
+                <p>
+                    An AI-powered web application that enables users to upload PDF
+                    documents and interact with them using natural language questions.
+                    Instead of manually reading lengthy documents, users can ask
+                    questions and get accurate answers based on the uploaded PDF.
+                    Text is extracted using PyPDF, user queries are processed with
+                    the Google Gemini API, and responses are displayed through a
+                    clean, responsive Flask-based web interface.
+                </p>
+                <p class="project-workflow-label">How it works:</p>
+                <ol class="project-workflow">
+                    <li>User uploads a PDF document.</li>
+                    <li>SmartDoc extracts the text from the PDF.</li>
+                    <li>The user enters a question about the document.</li>
+                    <li>The extracted text and question are sent to the Gemini AI model.</li>
+                    <li>The AI generates an answer based on the uploaded document.</li>
+                    <li>The response is displayed on the webpage.</li>
+                </ol>
+                <div class="character-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Flask</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">PyPDF</span>
+                    <span class="tag">Google Gemini API</span>
+                    <span class="tag">Git &amp; GitHub</span>
+                    <span class="tag">Render</span>
+                </div>
+                <a href="https://idu-platform-h6dj.onrender.com/"
+   class="btn"
+   target="_blank">
+    View Project
+</a>
+            </div>
+
+            <div class="card project-card">
+                <h3>Anime Character Showcase</h3>
+                <p>A Flask-powered site with dynamic routes for anime character pages.</p>
+                <div class="character-tags">
+                    <span class="tag">Flask</span>
+                    <span class="tag">Jinja2</span>
+                    <span class="tag">CSS</span>
+                </div>
+                <a href="{{ url_for('index') }}" class="btn">View Project</a>
+            </div>
+
+            <div class="card project-card">
+                <h3>Project Three</h3>
+                <p>Short description of what this project does and what you built it with.</p>
+                <div class="character-tags">
+                    <span class="tag">JavaScript</span>
+                </div>
+                <a href="#" class="btn">View Project</a>
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}

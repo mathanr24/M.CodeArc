@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}About | MADCPT {% endblock %}
+
+{% block content %}
+
+    <section class="about-page">
+        <h1>About Me</h1>
+        <p class="section-sub">A little about who I am and what I do.</p>
+
+        <div class="card about-card">
+            <p>
+                Hi, I'm <strong>Mathan</strong> — a developer passionate about building
+                clean, functional websites and web apps. I enjoy working across the stack,
+                from designing intuitive interfaces to writing solid backend logic with
+                tools like Flask and Python.
+            </p>
+            <p>
+                Outside of coding, I'm a big anime fan — which is actually how this site's
+                character showcase section came to be. I like combining things I'm learning
+                with things I genuinely enjoy.
+            </p>
+        </div>
+
+        <div class="grid about-highlights">
+            <div class="card">
+                <h3>🎓 Background</h3>
+                <p>Aspiring AI&ML Engineer</p>
+            </div>
+            <div class="card">
+                <h3>💻 What I Do</h3>
+                <p>Web development, Python/Flask, front-end design.</p>
+            </div>
+            <div class="card">
+                <h3>🎯 Currently</h3>
+                <p>Building and improving this portfolio site.</p>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

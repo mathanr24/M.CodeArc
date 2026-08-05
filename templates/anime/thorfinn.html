@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Thorfinn | Anime Showcase{% endblock %}
+
+{% block content %}
+
+<section class="character-page">
+    <div class="character-hero">
+        <img src="{{ url_for('static', filename='images/thorfinn.jpg') }}" alt="Thorfinn" class="character-img">
+
+        <div class="character-info">
+            <h1>Thorfinn</h1>
+            <p class="character-anime">Vinland Saga</p>
+
+            <p class="character-desc">
+                Thorfinn is the main protagonist of Vinland Saga. Once driven by revenge,
+                he gradually transforms into a compassionate warrior who seeks peace
+                instead of violence. His journey of growth, redemption, and self-discovery
+                makes him one of the most inspiring characters in anime.
+            </p>
+
+            <div class="character-tags">
+                <span class="tag">Warrior</span>
+                <span class="tag">Swordsman</span>
+                <span class="tag">Redemption</span>
+            </div>
+        </div>
+    </div>
+
+    <a href="{{ url_for('index') }}" class="btn back-btn">← Back to Home</a>
+</section>
+
+{% endblock %}

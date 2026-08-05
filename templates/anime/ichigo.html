@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Ichigo | Anime Showcase{% endblock %}
+
+{% block content %}
+
+    <section class="character-page">
+        <div class="character-hero">
+            <img src="{{ url_for('static', filename='images/ichigo.jpg') }}" alt="Ichigo Kurosaki" class="character-img">
+            <div class="character-info">
+                <h1>Ichigo Kurosaki</h1>
+                <p class="character-anime">Bleach</p>
+                <p class="character-desc">
+                    A substitute Soul Reaper who gained his powers to protect his family
+                    and friends. Ichigo balances the weight of multiple inherited powers
+                    while fighting to defend both the human and spirit worlds.
+                </p>
+                <div class="character-tags">
+                    <span class="tag">Soul Reaper</span>
+                    <span class="tag">Protagonist</span>
+                    <span class="tag">Swordsman</span>
+                </div>
+            </div>
+        </div>
+
+        <a href="{{ url_for('index') }}" class="btn back-btn">← Back to Home</a>
+    </section>
+
+{% endblock %}

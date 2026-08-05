@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Naruto | Anime Showcase{% endblock %}
+
+{% block content %}
+
+    <section class="character-page">
+        <div class="character-hero">
+           <img src="{{ url_for('static', filename='images/naruto.jpg') }}" alt="Naruto Uzumaki" class="character-img">
+            <div class="character-info">
+                <h1>Naruto Uzumaki</h1>
+                <p class="character-anime">Naruto</p>
+                <p class="character-desc">
+                    Once an outcast shunned by his village, Naruto's determination and
+                    "never give up" spirit eventually earn him the respect of everyone
+                    around him — and the title of Hokage.
+                </p>
+                <div class="character-tags">
+                    <span class="tag">Ninja</span>
+                    <span class="tag">Protagonist</span>
+                    <span class="tag">Hokage</span>
+                </div>
+            </div>
+        </div>
+
+        <a href="{{ url_for('index') }}" class="btn back-btn">← Back to Home</a>
+    </section>
+
+{% endblock %}

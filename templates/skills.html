@@ -1,0 +1,434 @@
+{% extends "base.html" %}
+
+{% block title %}Skills | MADCPT{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+    .skills-page {
+        padding-bottom: 40px;
+    }
+
+    .skills-intro {
+        max-width: 700px;
+        margin-bottom: 40px;
+    }
+
+    .skills-intro p {
+        color: var(--text-muted);
+        font-size: 1.05rem;
+    }
+
+    .skills-category {
+        margin-bottom: 48px;
+    }
+
+    .skills-category-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+        color: var(--text-light);
+    }
+
+    .skills-category-title i {
+        color: var(--primary);
+    }
+
+    .skill-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 20px;
+    }
+
+    /* ---------- Glassmorphism skill card ---------- */
+    .skill-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 18px;
+        padding: 22px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--primary);
+        box-shadow: 0 10px 30px rgba(236, 7, 7, 0.986);
+    }
+
+    .skill-card-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 14px;
+    }
+
+    .skill-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--secondary), var(--primary));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: #fff;
+        flex-shrink: 0;
+    }
+
+    .skill-name {
+        font-weight: 700;
+        font-size: 1.05rem;
+    }
+
+    .skill-level-label {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+    }
+
+    /* ---------- Animated progress bar ---------- */
+    .skill-bar-track {
+        width: 100%;
+        height: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+
+    .skill-bar-fill {
+        height: 100%;
+        width: 0%;
+        border-radius: 10px;
+        background: linear-gradient(90deg, var(--secondary), var(--primary));
+        transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .skill-card.in-view .skill-bar-fill {
+        width: var(--target-width);
+    }
+
+    /* ---------- Soft skills (badge style, no bar) ---------- */
+    .soft-skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .soft-skill-badge {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 14px 20px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .soft-skill-badge:hover {
+        transform: translateY(-4px) scale(1.03);
+        border-color: var(--accent);
+    }
+
+    .soft-skill-badge i {
+        color: var(--accent);
+    }
+
+    @media (max-width: 500px) {
+        .skill-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+    <section class="skills-page">
+        <h1>Skills</h1>
+        <div class="skills-intro">
+            <p>
+                I'm a 2nd-year AI &amp; Machine Learning engineering student with a strong
+                interest in web development, AI, and problem-solving. Here's a snapshot of
+                the tools and technologies I've been working with.
+            </p>
+        </div>
+
+        <!-- Programming Languages -->
+        <div class="skills-category">
+            <h2 class="skills-category-title"><i class="fa-solid fa-code"></i> Programming Languages</h2>
+            <div class="skill-grid">
+
+                <div class="skill-card" style="--target-width: 70%;">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+                        <div>
+                            <div class="skill-name">Python</div>
+                            <div class="skill-level-label">Intermediate</div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+                </div>
+
+                <div class="skill-card" style="--target-width: 65%;">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fa-solid fa-c"></i></div>
+                        <div>
+                            <div class="skill-name">C</div>
+                            <div class="skill-level-label">Intermediate</div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+                </div>
+
+                <div class="skill-card" style="--target-width: 40%;">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fa-brands fa-java"></i></div>
+                        <div>
+                            <div class="skill-name">Java</div>
+                            <div class="skill-level-label">Basic</div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Web Development -->
+        <div class="skills-category">
+            <h2 class="skills-category-title"><i class="fa-solid fa-globe"></i> Web Development</h2>
+            <div class="skill-grid">
+
+                <div class="skill-card" style="--target-width: 85%;">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+                        <div>
+                            <div class="skill-name">HTML5</div>
+                            <div class="skill-level-label">Proficient</div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+                </div>
+
+                <div class="skill-card" style="--target-width: 80%;">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fa-brands fa-css3-alt"></i></div>
+                        <div>
+                            <div class="skill-name">CSS3</div>
+                            <div class="skill-level-label">Proficient</div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+                </div>
+
+                <div class="skill-card" style="--target-width: 40%;">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+                        <div>
+                            <div class="skill-name">JavaScript</div>
+                            <div class="skill-level-label">Basic</div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+                </div>
+
+                <div class="skill-card" style="--target-width: 65%;">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fa-solid fa-flask"></i></div>
+                        <div>
+                            <div class="skill-name">Flask</div>
+                            <div class="skill-level-label">Intermediate</div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Tools & Technologies -->
+        <div class="skills-category">
+            <h2 class="skills-category-title"><i class="fa-solid fa-toolbox"></i> Tools &amp; Technologies</h2>
+            <div class="skill-grid">
+
+                <div class="skill-card" style="--target-width: 70%;">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fa-brands fa-git-alt"></i></div>
+                        <div>
+                            <div class="skill-name">Git</div>
+                            <div class="skill-level-label">Intermediate</div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+                </div>
+
+                <div class="skill-card" style="--target-width: 70%;">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fa-brands fa-github"></i></div>
+                        <div>
+                            <div class="skill-name">GitHub</div>
+                            <div class="skill-level-label">Intermediate</div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+                </div>
+
+                <div class="skill-card" style="--target-width: 85%;">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                        <div>
+                            <div class="skill-name">VS Code</div>
+                            <div class="skill-level-label">Proficient</div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+                </div>
+
+                <div class="skill-card" style="--target-width: 40%;">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+                        <div>
+                            <div class="skill-name">MySQL</div>
+                            <div class="skill-level-label">Basic</div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Core Concepts -->
+        <div class="skills-category">
+            <h2 class="skills-category-title"><i class="fa-solid fa-diagram-project"></i> Core Concepts</h2>
+            <div class="skill-grid">
+
+                <div class="skill-card" style="--target-width: 35%;">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fa-solid fa-sitemap"></i></div>
+                        <div>
+                            <div class="skill-name">Data Structures &amp; Algorithms</div>
+                            <div class="skill-level-label">Learning</div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+                </div>
+
+                <div class="skill-card" style="--target-width: 70%;">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fa-solid fa-cubes"></i></div>
+                        <div>
+                            <div class="skill-name">Object-Oriented Programming</div>
+                            <div class="skill-level-label">Intermediate</div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+                </div>
+
+                <div class="skill-card" style="--target-width: 50%;">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fa-solid fa-plug"></i></div>
+                        <div>
+                            <div class="skill-name">REST API Basics</div>
+                            <div class="skill-level-label">Basic</div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+                </div>
+
+                <div class="skill-card" style="--target-width: 75%;">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                        <div>
+                            <div class="skill-name">Responsive Web Design</div>
+                            <div class="skill-level-label">Intermediate</div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- AI & Machine Learning -->
+        <div class="skills-category">
+            <h2 class="skills-category-title"><i class="fa-solid fa-brain"></i> AI &amp; Machine Learning</h2>
+            <div class="skill-grid">
+
+                <div class="skill-card" style="--target-width: 35%;">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fa-solid fa-robot"></i></div>
+                        <div>
+                            <div class="skill-name">Machine Learning Concepts</div>
+                            <div class="skill-level-label">Basic</div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+                </div>
+
+                <div class="skill-card" style="--target-width: 30%;">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <div>
+                            <div class="skill-name">Python Libraries for AI</div>
+                            <div class="skill-level-label">Beginner</div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+                </div>
+
+                <div class="skill-card" style="--target-width: 40%;">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <div>
+                            <div class="skill-name">AI Project Development</div>
+                            <div class="skill-level-label">Beginner</div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="skills-category">
+            <h2 class="skills-category-title"><i class="fa-solid fa-handshake"></i> Soft Skills</h2>
+            <div class="soft-skills-grid">
+                <div class="soft-skill-badge"><i class="fa-solid fa-lightbulb"></i> Problem Solving</div>
+                <div class="soft-skill-badge"><i class="fa-solid fa-people-group"></i> Teamwork</div>
+                <div class="soft-skill-badge"><i class="fa-solid fa-bolt"></i> Quick Learner</div>
+                <div class="soft-skill-badge"><i class="fa-solid fa-comments"></i> Communication</div>
+                <div class="soft-skill-badge"><i class="fa-solid fa-arrows-rotate"></i> Adaptability</div>
+            </div>
+        </div>
+
+    </section>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const cards = document.querySelectorAll('.skill-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        cards.forEach(card => observer.observe(card));
+    });
+</script>
+{% endblock %}

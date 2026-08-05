@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Gojo | Anime Showcase{% endblock %}
+
+{% block content %}
+
+    <section class="character-page">
+        <div class="character-hero">
+            <img src="{{ url_for('static', filename='images/gojo.jpg') }}" alt="Gojo Satoru" class="character-img">
+            <div class="character-info">
+                <h1>Satoru Gojo</h1>
+                <p class="character-anime">Jujutsu Kaisen</p>
+                <p class="character-desc">
+                    Widely regarded as the strongest Jujutsu Sorcerer alive, Gojo combines
+                    overwhelming power with a laid-back, confident personality — making him
+                    one of the most iconic characters in modern anime.
+                </p>
+                <div class="character-tags">
+                    <span class="tag">Sorcerer</span>
+                    <span class="tag">Teacher</span>
+                    <span class="tag">Strongest</span>
+                </div>
+            </div>
+        </div>
+
+        <a href="{{ url_for('index') }}" class="btn back-btn">← Back to Home</a>
+    </section>
+
+{% endblock %}
