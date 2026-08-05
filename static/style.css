@@ -416,3 +416,10 @@ body.page-exit{
         max-width: 100%;
     }
 }
+
+@media (max-width: 768px) {
+    .about-card p {
+        text-align: left;
+        line-height: 1.8;
+    }
+}
