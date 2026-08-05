@@ -397,3 +397,11 @@ body.page-exit{
         display: flex;
     }
 }
+
+@media (max-width: 768px) {
+    .character-image img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+}
