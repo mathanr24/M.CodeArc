@@ -361,3 +361,39 @@ body.page-exit{
     transform:scale(.96);
     filter:blur(10px);
 }
+/* ---------- Mobile Navbar ---------- */
+@media (max-width: 768px) {
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #1e1e2e;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+
+        max-height: 0;
+        overflow: hidden;
+
+        transition: max-height 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-links.open {
+        max-height: 350px;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 16px;
+        text-align: center;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+}
