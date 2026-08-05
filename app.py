@@ -43,5 +43,5 @@ def anime_character(character):
     return render_template(f'anime/{character}.html')
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run()
