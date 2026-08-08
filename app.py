@@ -33,7 +33,7 @@ def contact():
 
 ANIME_CHARACTERS = [
     'luffy', 'ichigo', 'eren', 'gojo',
-    'goku', 'naruto', 'thorfinn'
+    'goku', 'naruto', 'thorfinn','subaru'
 ]
 
 @app.route('/anime/<character>')
