@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Subaru | Anime Showcase{% endblock %}
+
+{% block content %}
+
+    <section class="character-page">
+        <div class="character-hero">
+            <img src="{{ url_for('static', filename='images/anime/subaru/subaru.jpg') }}" alt="Subaru" class="character-img">
+            <div class="character-info">
+                <h1>Subaru Natsuki</h1>
+                <p class="character-anime">Re:Zero − Starting Life in Another World</p>
+                <p class="character-desc">
+                    An ordinary young man pulled into a fantasy world, Subaru's power
+                    to "Return by Death" forces him to relive the same suffering
+                    again and again. His story is one of the most emotionally intense
+                    journeys in isekai anime, built on persistence and growth through pain.
+                </p>
+                <div class="character-tags">
+                    <span class="tag">Isekai Protagonist</span>
+                    <span class="tag">Return by Death</span>
+                    <span class="tag">Character Growth</span>
+                </div>
+            </div>
+        </div>
+
+        <a href="{{ url_for('index') }}" class="btn back-btn">← Return by death</a>
+    </section>
+
+{% endblock %}
